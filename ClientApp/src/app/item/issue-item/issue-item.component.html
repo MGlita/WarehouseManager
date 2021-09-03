@@ -1,0 +1,39 @@
+<div class="container3">
+    <span class="welcome-txt">
+        Wydaj produkt
+    </span> 
+    
+    <div class="center form">
+        <div class="wrap-form">
+            <span class="new-text">Wybierz produkt</span>
+            <!-- <form [formGroup]="itemForm" (ngSubmit)="onSubmit()"> -->
+                <form [formGroup]="warehouseForm" (ngSubmit)="onSubmit()"> 
+                <mat-form-field class="limiter" appearance="fill" >
+                    <mat-label>Produkt</mat-label>
+                    <input [ngClass]="{ 'is-invalid': submitted && f.item_name.errors }"  name="name" type="text" matInput [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                      <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="onGetItem()">
+                        {{option.item.name}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+
+                  <input class="form-control input" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" type="number" [(ngModel)]="model.amount" formControlName="amount" name="amount" 
+                  placeholder="Ilość do wydania"
+                  aria-label="Number"
+                  >
+                  <div *ngIf="submitted && f.amount.errors" class="alert alert-danger">
+                    <div *ngIf="f.amount.errors.required">Nazwa jest wymagana</div>
+                    <div *ngIf="f.amount.errors.maxlength">Maksymalna wartość znaków to 50</div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span>Wydaj produkt</span>
+                </button>
+                <button type="button" (click)="resetForm()" class="btn btn-primary margin-auto">
+                    <span>Wyczyść</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+</div>

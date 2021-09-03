@@ -1,0 +1,33 @@
+<nav *ngIf="isLoggedIn()" class="navbar navbar-expand-lg navbar bg-primary">
+    <a routerLink="/home" class="navbar-brand"> 
+        <span class="nav-text"> Strona główna</span> 
+    </a>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link nav-icon icons" routerLink="/stock"> <fa-icon [icon]="faBoxes"></fa-icon></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link nav-icon icons" routerLink="/take_order"> <fa-icon [icon]="faReceive"></fa-icon></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link nav-icon icons" routerLink="/place_order"> <fa-icon [icon]="faOrder"></fa-icon></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link nav-icon icons" routerLink="/new_item"> <fa-icon [icon]="faPlus"></fa-icon></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link nav-icon icons" routerLink="/issue_item"> <fa-icon  [icon]="faHandPointRight"></fa-icon></a>
+        </li>
+      </ul>
+      <ul class="navbar-nav right">
+        <li class="nav-item active right">
+          <a class="nav-link red" routerLink="/login" (click)="logout()"><span class="nav-text">Logout</span></a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+  
+<router-outlet></router-outlet>

@@ -1,0 +1,29 @@
+<div class="data ">
+
+    <mat-table [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc" class="table mat-table-hover">
+    
+        <ng-container matColumnDef="itemId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.itemId}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="item.name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nazwa </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.item.name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="amount">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Ilość </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.amount}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="item.description">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Opis </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.item.description}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+        <mat-row [ngStyle]="{'background': row.color}" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

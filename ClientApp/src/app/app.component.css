@@ -1,0 +1,31 @@
+.right{
+    text-align: right;
+}
+.red:hover {
+    font-weight: 500;
+    border-radius: 25px;
+    background-color: rgb(216, 8, 8);
+}
+nav span{
+    color:#fff;
+}
+.icons{
+    font-size: large;
+    transition: transform .2s;
+    color: rgba(0,0,0,0.7);
+}
+
+.nav-icon{
+    transform: scale(1.2);
+    margin-right: 9px;
+    margin-left: 5px;
+}
+
+.icons:hover{
+    opacity: 60%;
+    transform: scale(1.8);
+}
+
+.nav-text:hover{
+    opacity: 60%;
+}

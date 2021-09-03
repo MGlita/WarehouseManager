@@ -1,0 +1,31 @@
+<div class="center form">
+    <div class="wrap-form">
+        <span class="new-text">Nowy produkt</span>
+        <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+
+            <input class="form-control input" [ngClass]="{ 'is-invalid': submitted && f.item_name.errors }" [(ngModel)]="stockService.formData.item.name" type="text" formControlName="item_name" name="item_name" id="item_name" placeholder="Nazwa" required>
+            <div *ngIf="submitted && f.item_name.errors" class="alert alert-danger">
+                <div *ngIf="f.item_name.errors.required">Nazwa jest wymagana</div>
+                <div *ngIf="f.item_name.errors.maxlength">Maksymalna wartość znaków to 50</div>
+            </div>
+    
+            <input class="form-control input" [ngClass]="{ 'is-invalid': submitted && f.item_description.errors }" [(ngModel)]="stockService.formData.item.description" type="text" formControlName="item_description" name="item_description" id="item_description" placeholder="Opis">
+            <div *ngIf="submitted && f.item_description.errors" class="alert alert-danger">
+                <div *ngIf="f.item_description.errors.maxlength">Maksymalna wartość znaków to 50</div>
+            </div>
+
+            <input class="form-control input" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" [(ngModel)]="stockService.formData.amount" type="number" formControlName="amount" name="amount" id="amount" placeholder="Ilość" required>
+            <div *ngIf="submitted && f.amount.errors" class="alert alert-danger">
+                <div *ngIf="f.amount.errors.required">Ilość jest wymagana</div>
+                <div *ngIf="f.amount.errors.positive">Ilość nie może być ujemna</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <span>Dodaj produkt</span>
+            </button>
+            <button type="button" (click)="resetForm()" class="btn btn-primary margin-auto">
+                <span>Wyczyść</span>
+            </button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+  
+<div class="container2">
+    <div class="header">
+        <span class="header-text">Warehouse Management</span>
+    </div>
+    <div>
+        <div class="block" (click)="onStock()"><fa-icon [icon]="faBoxes"></fa-icon></div>
+        <span class="desc">Stan Magazynu</span>
+    </div>
+    <div>
+        <div class="block" (click)="onTakeOrder()"><fa-icon [icon]="faReceive"></fa-icon></div>
+        <span class="desc">Przyjmij zamówienie</span>
+    </div>
+    <div>
+        <div class="block" (click)="onPlaceOrder()"><fa-icon [icon]="faOrder"></fa-icon></div>
+        <span class="desc">Złóż zamówienie</span>
+    </div>
+    <div>
+        <div class="block" (click)="onAddItem()"><fa-icon [icon]="faPlus"></fa-icon></div>
+        <span class="desc">Dodaj produkt</span>
+    </div>
+    <div>
+        <div class="block" (click)="onIssueItem()"><fa-icon [icon]="faHandPointRight"></fa-icon></div>
+        <span class="desc">Wydaj produkt</span>
+    </div>
+</div>
