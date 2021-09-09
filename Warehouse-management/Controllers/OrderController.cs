@@ -23,7 +23,8 @@ namespace Warehouse_management.Controllers
         [HttpGet]
         public List<Order> Get()
         {
-            return _repository.GetActiveOrders();
+            var x = _repository.GetActiveOrders();
+            return x;
         }
 
         [HttpPost]
@@ -32,16 +33,16 @@ namespace Warehouse_management.Controllers
             _repository.AddOrder(order);
         }
 
-        [Route("cancel/{orderId}")]
+        [Route("Cancel/{orderId}")]
         [HttpPut]
-        public void CancelOrder(int orderId)
+        public void CancelOrder([FromBody]int orderId)
         {
             _repository.CancelOrder(orderId);
         }
 
-        [Route("accept/{orderId}")]
+        [Route("Accept/{orderId}")]
         [HttpPut]
-        public void AcceptOrder(int orderId)
+        public void AcceptOrder([FromBody]int orderId)
         {
             _repository.AcceptOrder(orderId);
         }

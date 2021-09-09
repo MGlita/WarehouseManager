@@ -27,9 +27,11 @@ import { IssueItemComponent } from './item/issue-item/issue-item.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { OrderDetailComponent } from './order/place-order/order-detail/order-detail.component';
 import { PlaceOrderComponent } from './order/place-order/place-order.component';
 import { OrderService } from './order/order-service';
+import { OrderFormComponent } from './order/place-order/order-form/order-form.component';
+import { OrderDetailComponent } from './order/take-order/order-detail/order-detail.component';
+import { TakeOrderComponent } from './order/take-order/take-order.component';
 
 
 @NgModule({
@@ -43,8 +45,10 @@ import { OrderService } from './order/order-service';
     NewItemComponent,
     ItemFormComponent,
     IssueItemComponent,
+    OrderFormComponent,
+    PlaceOrderComponent,
     OrderDetailComponent,
-    PlaceOrderComponent
+    TakeOrderComponent
   ],
   imports: [
     BrowserModule,

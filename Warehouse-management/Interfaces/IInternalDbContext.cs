@@ -15,6 +15,7 @@ namespace Warehouse_management.Interfaces
         DbSet<Employee> Employee { get; set; }
         DbSet<Item> Item { get; set; }
         DbSet<Order> Order { get; set; }
+        DbSet<OrderItem> OrderItem { get; set; }
         DbSet<OrderStatus> OrderStatus { get; set; }
         DbSet<Warehouse> Warehouse { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));

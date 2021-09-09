@@ -15,7 +15,15 @@ export class OrderService {
     return this.httpClient.post(this.apiUrl, order);
   }
 
-  public get(){
+  public getAllActiveOrders(){
     return this.httpClient.get(this.apiUrl);
+  }
+
+  public acceptOrder(orderId:number){
+    return this.httpClient.put(this.apiUrl+"/Accept/"+orderId, orderId);
+  }
+
+  public cancelOrder(orderId:number){
+    return this.httpClient.put(this.apiUrl+"/Cancel/"+orderId, orderId);
   }
 }

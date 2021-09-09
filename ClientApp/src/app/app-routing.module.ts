@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { StockStatusComponent } from './stock_status/stock_status.component';
 import { NewItemComponent } from './item/new-item.component';
+import { TakeOrderComponent } from './order/take-order/take-order.component';
 
 const routes: Routes = [
   { path: '', component: MainPageBlockComponent//,
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'new_item', component: NewItemComponent},
   { path: 'issue_item', component: IssueItemComponent},
   { path: 'place_order', component: PlaceOrderComponent},
+  { path: 'take_order', component: TakeOrderComponent},
   { path: '**', redirectTo: ''}
 ];
 

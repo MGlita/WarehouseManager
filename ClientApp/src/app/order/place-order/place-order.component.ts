@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'placeOrder',
+  selector: 'place-order',
   templateUrl: './place-order.component.html'
 })
 export class PlaceOrderComponent {

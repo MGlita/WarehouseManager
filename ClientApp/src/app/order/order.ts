@@ -1,9 +1,9 @@
-import { Warehouse } from './../stock_status/warehouse';
+import { OrderItem } from './orderItem';
 export class Order{
     orderId:number;
     price:number;
     orderDate:Date;
     statusId:number;
     contractor:string;
-    warehouse:Warehouse[]
+    orderItem:OrderItem[]
 }

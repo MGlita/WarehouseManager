@@ -75,7 +75,7 @@ mat-paginator{
 }
 mat-cell, mat-header-cell{
 	min-width: 100px;
-	max-width: 100px;
+	max-width: 200px;
     word-wrap: normal;
 }
 .welcome-txt{

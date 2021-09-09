@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Warehouse_management.Entities;
 using Warehouse_management.Entities.Configurations;
 using Warehouse_management.Interfaces;
 
 namespace Warehouse_management
 {
-    public class InternalDbContext : DbContext, IInternalDbContext
+    public class InternalDbContext : IdentityDbContext, IInternalDbContext 
     {
         public InternalDbContext(DbContextOptions<InternalDbContext> options)
             : base(options)
@@ -17,6 +18,7 @@ namespace Warehouse_management
         public DbSet<Employee> Employee { get; set; }
         public DbSet<Item> Item { get; set; }
         public DbSet<Order> Order { get; set; }
+        public DbSet<OrderItem> OrderItem { get; set; }
         public DbSet<OrderStatus> OrderStatus { get; set; }
         public DbSet<Warehouse> Warehouse { get; set; }
 

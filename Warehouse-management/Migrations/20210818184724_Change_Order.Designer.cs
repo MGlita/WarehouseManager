@@ -240,9 +240,9 @@ namespace Warehouse_management.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Address");
+                    //b.Navigation("Address");
 
-                    b.Navigation("CompanyPosition");
+                    //b.Navigation("CompanyPosition");
                 });
 
             modelBuilder.Entity("Warehouse_management.Entities.Warehouse", b =>
@@ -253,7 +253,7 @@ namespace Warehouse_management.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Item");
+                    //b.Navigation("Item");
                 });
 #pragma warning restore 612, 618
         }

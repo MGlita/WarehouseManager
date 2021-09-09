@@ -11,5 +11,6 @@ namespace Warehouse_management.Entities
         public byte StatusId { get; set; }
         public string Contractor { get; set; }
         public List<OrderItem> OrderItem { get; set; }
+        public OrderStatus Status { get; set; }
     }
 }

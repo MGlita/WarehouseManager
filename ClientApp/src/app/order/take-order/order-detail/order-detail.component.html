@@ -1,0 +1,53 @@
+<div class="data ">
+
+    <mat-table [dataSource]="dataSource" matSort matSortActive="id" matSortDirection="asc" class="table mat-table-hover">
+    
+        <ng-container matColumnDef="orderId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.orderId}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Cena </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="orderDate">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Data zamówienia </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.orderDate | date:'yyyy-MM-dd hh:mm:ss'}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="statusId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.statusId}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="contractor">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Kontraktor </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.contractor}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="items">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Ilość produktów </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.orderItem.length}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="accept">
+            <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <button class="btn btn-success" (click)="accept(element)" type="button">Przyjmij</button>
+            </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="cancel">
+            <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <button class="btn btn-warning" (click)="cancel(element)" type="button">Anuluj</button>
+            </mat-cell>
+        </ng-container>  
+
+        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+        <mat-row [ngStyle]="{'background': row.color}" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
